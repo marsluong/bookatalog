@@ -6,6 +6,7 @@
 		<td>First Name</td>
 		<td>Last Name</td>
 		<td>Year</td>
+		<td>Links</td>
 	<tr>
 
 	<% @authors.each do |author| %>
@@ -13,6 +14,14 @@
 		<td><%= author.first_name %></td>
 		<td><%= author.last_name %></td>
 		<td><%= author.year %></td>
+		<td>[<%= link_to 'Show', author_path(author) %>,
+			 <%= link_to 'Edit', edit_author_path(author) %>,
+			 <%= link_to 'Delete', author_path(author), method: :delete %>]</td>
 	</tr>
 	<% end %>
 </table>
+
+
+<p>
+	<%= link_to "Create New Author", new_author_path %>
+</p>
