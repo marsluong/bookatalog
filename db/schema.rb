@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214063209) do
+ActiveRecord::Schema.define(version: 20150223195634) do
+
+  create_table "author_profiles", force: :cascade do |t|
+    t.string   "birthplace"
+    t.text     "bio"
+    t.text     "awards"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+  end
+
+  add_index "author_profiles", ["author_id"], name: "index_author_profiles_on_author_id"
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"

@@ -11,5 +11,6 @@
 #
 
 class Author < ActiveRecord::Base
+	has_one :author_profile
 	validates :first_name, presence: true, length: {maximum: 50}
 end
